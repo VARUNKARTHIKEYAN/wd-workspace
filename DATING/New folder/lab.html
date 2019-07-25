@@ -1,0 +1,131 @@
+<!doctype.html>
+<html>
+<head> 
+<link rel="stylesheet" href="dating.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<title> looking for a dating </title>
+<p><center><h1 class='a'>PLEASE ENTER YOUR DETAILS FOR OUR DATING WEBSITE!</h1></center></p>
+
+</head>
+
+<body>
+  <!---1--->
+
+
+
+ 	<form>
+ <fieldset>
+<legend align="left"><b>Your Face</b></legend>
+  <form id="form1" runat="server">
+  <label>Your Image</label><input type='file' id="imgInp" required="" /><br>
+  <label>Image Preview:</label><img id="image" />
+</form>
+</fieldset>
+ <!---2--->
+
+<form>
+ <fieldset>
+
+  <legend align="left"><b>Your General Details</b></legend>
+    <label>Name:</label>  
+          <input type="text" name="name" id="name" required=""><br>
+    <label>Gender:</label> 
+          <input type="radio" class="gen" name="Gender" value="male" required="">Male
+              <input type="radio" class="gen" name="Gender" value="female" required="">Female<br>
+   
+    <label> Age:</label>
+        <input type="number" name="age" id="age" required=""><br>
+    
+    <label>Date of birth:</label>
+        <input type="date" name="dob" id="dob" required=""><br>
+    
+    <label>Favorite color:</label>
+         <input type="color" name="color" id="col" class="box"><br>
+    
+
+<label>Which Country:</label>    
+<select name="select" id="select" class="input_list" onkeyup="updateTxt('select','txt2');">
+          <option class="show"></option>
+              <option value="india">India</option>
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="china">China</option>
+              <option value="denmark">Denmark</option>
+              <option value="france">France</option>
+</select>
+ </fieldset>
+</form>
+<!---3---->
+ <form>
+ <fieldset>
+
+  <legend align="left"><b>Your Indicator</b></legend>
+  <label>Height:</label> <label class="short">Short</label>
+                <input type="range" name="height" min="0" max="100">
+              <label class="tall"> Tall</label><br>
+  <label>Salary:</label>  <label class="poor">Poor</label>
+                <input type="range" name="height" min="0" max="100">
+                <label class="rich">Rich</label>
+    </fieldset>
+</form>
+ <!----4--->
+
+ <form>
+ <fieldset>
+
+  <legend align="left"><b>Your Contact Information</b></legend>
+  <label>Email:</label><input type="email" name="mail" id="mail" required=""><br>
+
+  <label>Mobile:</label><input type="tel" name="mob" id="mob"><br>
+
+  <label>Address:</label><textarea name="address" id="address"></textarea><br>
+
+ <label>Method to contact you:</label>
+                <input type="checkbox" name="mail" value="email" class="gen">Email
+                        <input type="checkbox" name="app" value="whatsapp" class="gen">Whatsapp
+                        <input type="checkbox" name="chat" value="inapp" class="gen">In-app chat
+                    
+       </fieldset><br>
+       
+       <input name="button" type="button" class="btn" value="Submit" onClick="updateTxt('name','age','dob','col','select','mail','mob','address')">
+
+        </form>
+
+<script>
+  function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#image').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#imgInp").change(function() {
+  readURL(this);
+});
+
+/*popup*/
+    function updateTxt(field1,field2,field3,field4,field5,field6,field7,field8)
+  {  
+    var field1 = document.getElementById(field1).value;  
+    var field2 = document.getElementById(field2).value;
+    var field3 = document.getElementById(field3).value;
+    var field4 = document.getElementById(field4).value;
+    var field5 = document.getElementById(field5).value;
+    var field6 = document.getElementById(field6).value;
+    var field7 = document.getElementById(field7).value;
+    var field8 = document.getElementById(field8).value;
+     
+    alert(field1 + '\n' + field2 + '\n' + field3 + '\n' + field4 + '\n' + field5 + '\n' + field6 + '\n' + field7 + '\n' +field8);
+
+    }  
+
+</script>
+</body>
+</html>
+      

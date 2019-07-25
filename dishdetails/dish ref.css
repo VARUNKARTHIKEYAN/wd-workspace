@@ -1,0 +1,12 @@
+.ng-controller {
+  width: 100%;
+  max-width: 200px;
+  display:inline;
+  float: none !important;
+  margin-left: 10px;
+}
+
+small {
+  margin-left: 20px;
+  display:inline;
+}
